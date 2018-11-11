@@ -1,0 +1,31 @@
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header_font;
+}
+body, input, textarea {
+    font-family: $body_font;
+}
+
+a {
+    color: $primary_color;
+    padding-bottom: 3px;
+    border-bottom: 1px solid transparent;
+    transition: all 300ms ease-in;
+
+    &:hover {
+        color: #000;
+        text-decoration: none;
+        border-bottom: 1px solid $primary_color;
+    }
+
+    &:active, &:focus {
+        color: $primary_color;
+        outline: 0;
+    }
+}
+
+.aside-title {
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 0 5px 15px;
+    border-bottom: 5px solid $gray;
+}
