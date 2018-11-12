@@ -16,6 +16,15 @@
 (function($){
     $(document).ready(function() {
 
+        var triggerBttn = $( '#trigger-overlay' ),
+		overlay = $( 'div.overlay' );
+        
+        triggerBttn.on('click', function(){
+            triggerBttn.toggleClass('active');
+            overlay.toggleClass('open');
+            overlay.toggleClass('close'); 
+        });
+
         // The gallery
         $().fancybox({
             selector : '.gallery-icon a'

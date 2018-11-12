@@ -1,12 +1,32 @@
+html {
+    background: $gray;
+    padding: 20px;
+
+    @media (min-width: 1024px){
+        padding: 50px;
+    }
+
+}
+
+body {
+    border: 1px solid #c0c0c0;
+    box-shadow: 20px 20px 0 rgba(0,0,0,.1);
+}
+
 img {
     max-width: 100%;
 }
 
+
 .site-header {
     text-align: center;
+
     .logo {
         max-width: 400px;
-        margin: 40px auto 0;
+        margin: 40px 0 auto 20px;
+        @media (min-width: 1024px){
+            margin: 75px auto;
+        }
     }
 }
 
@@ -43,6 +63,53 @@ img {
 .home-title {
     font-size: 42px;
     margin-bottom: 1em;
+}
+
+
+// Post styling
+.post-content {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+
+    p {
+        margin-bottom: 30px;
+    }
+}
+
+.post {
+    padding-bottom: 30px;
+    margin-bottom: 45px;
+    border-bottom: 5px solid $gray;
+}
+
+.post-title {
+    font-size: 42px;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 0 5px 15px;
+    border-bottom: 2px solid $gray;
+    text-align: center;
+}
+
+.post-thumb {
+    margin-bottom: 45px;
+}
+
+.post-meta {
+    margin-bottom: 15px;
+
+    > strong {
+        padding-right: 10px;
+    }
+}
+
+// widgets
+.aside-title {
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 0 5px 15px;
+    border-bottom: 5px solid $gray;
 }
 
 //galleries
@@ -85,5 +152,7 @@ img {
 }
 
 .site-footer {
-
+    margin-top: 45px;
+    padding: 30px 0 45px;
+    border-top: 5px solid $gray;
 }

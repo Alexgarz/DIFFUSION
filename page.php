@@ -1,10 +1,13 @@
 <?php get_header();
     while(have_posts()): the_post(); ?>
 
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <h1 class="text-center post-title">
-            <?php the_title(); ?>
-        </h1>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('post'); ?>>
+
+        <header class="text-center">
+            <h1 class="post-title">
+                <?php the_title(); ?>
+            </h1>
+        </header>
         
         <?php if(has_post_thumbnail()): ?>
         <figure class="post-image">

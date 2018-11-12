@@ -15,24 +15,75 @@ a { color: #4b0303; padding-bottom: 3px; border-bottom: 1px solid transparent; -
 
 a:hover { color: #000; text-decoration: none; border-bottom: 1px solid #4b0303; }
 
-a:active, a:focus { color: #4b0303; outline: 0; }
-
-.aside-title { margin-bottom: 15px; display: inline-block; padding: 0 5px 15px; border-bottom: 5px solid #e1e1e1; }
+a:active, a:focus { text-decoration: none; color: #4b0303; outline: 0; }
 
 /* Navigation */
-.main-menu { margin: 30px 0; font-weight: 700; font-size: 20px; }
+/* Overlay style */
+.overlay { position: fixed; width: 100%; height: 100%; top: 0; left: 0; background: rgba(75, 3, 3, 0.8); }
 
-.main-menu ul { margin: 0; padding: 0; list-style: none outside none; }
+/* Overlay closing cross */
+.overlay .overlay-close { width: 80px; height: 80px; position: absolute; right: 20px; top: 20px; overflow: hidden; border: none; background: url(../img/cross.png) no-repeat center center; text-indent: 200%; color: transparent; outline: none; z-index: 100; }
 
-.main-menu ul > li { display: inline-block; vertical-align: middle; }
+/* Menu style */
+.overlay nav { font-family: "Lora", serif; font-weight: 700; text-align: center; position: relative; top: 50%; height: 80%; font-size: 34px; overflow: auto; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
 
-.main-menu ul > li a { display: inline-block; padding: 5px 10px; }
+.overlay ul { list-style: none; padding: 0; margin: 0 auto; display: inline-block; height: 100%; position: relative; }
+
+.overlay ul li { display: block; min-height: 54px; margin-bottom: 30px; }
+
+.overlay ul li:last-child { margin-bottom: 0; }
+
+.overlay ul li a { font-weight: 300; display: block; color: #fff; -webkit-transition: color 0.2s; border: 0; transition: color 0.2s; }
+
+.overlay ul li a:hover, .overlay ul li a:focus { color: #e3fcb1; text-decoration: line-through; }
+
+/* Effects */
+.overlay-hugeinc { opacity: 0; visibility: hidden; -webkit-transition: opacity 0.5s, visibility 0s 0.5s; transition: opacity 0.5s, visibility 0s 0.5s; }
+
+.overlay-hugeinc.open { opacity: 1; z-index: 999; visibility: visible; -webkit-transition: opacity 0.5s; transition: opacity 0.5s; }
+
+.overlay-hugeinc nav { -webkit-perspective: 1200px; perspective: 1200px; }
+
+.overlay-hugeinc nav ul { opacity: 0.4; -webkit-transform: translateY(-25%); transform: translateY(-25%); -webkit-transition: -webkit-transform 0.5s, opacity 0.5s; -webkit-transition: opacity 0.5s, -webkit-transform 0.5s; transition: opacity 0.5s, -webkit-transform 0.5s; transition: transform 0.5s, opacity 0.5s; transition: transform 0.5s, opacity 0.5s, -webkit-transform 0.5s; }
+
+.overlay-hugeinc.open nav ul { opacity: 1; -webkit-transform: rotateX(0deg); transform: rotateX(0deg); }
+
+.overlay-hugeinc.close nav ul { -webkit-transform: translateY(25%) rotateX(-35deg); transform: translateY(25%) rotateX(-35deg); }
+
+@media screen and (max-height: 30.5em) { .overlay nav { height: 70%; font-size: 34px; }
+  .overlay ul li { min-height: 34px; } }
+
+#trigger-overlay { position: fixed; z-index: 999; right: 70px; top: 70px; padding: 15px; background: #fff; border: 1px solid #eee; }
+
+#trigger-overlay > span { display: block; margin-bottom: 10px; background: #000; width: 50px; height: 5px; -webkit-transition: all 300ms ease-in; transition: all 300ms ease-in; }
+
+#trigger-overlay > span:last-child { margin: 0; }
+
+#trigger-overlay:focus { outline: 0; }
+
+#trigger-overlay.active { background: transparent; }
+
+#trigger-overlay.active > span { background: #fff; }
+
+#trigger-overlay.active > span:nth-child(1) { -webkit-transform: translate3d(0, 15px, 0) rotate(45deg); transform: translate3d(0, 15px, 0) rotate(45deg); }
+
+#trigger-overlay.active > span:nth-child(2) { opacity: 0; }
+
+#trigger-overlay.active > span:nth-child(3) { -webkit-transform: translate3d(0, -15px, 0) rotate(-45deg); transform: translate3d(0, -15px, 0) rotate(-45deg); }
+
+html { background: #e1e1e1; padding: 20px; }
+
+@media (min-width: 1024px) { html { padding: 50px; } }
+
+body { border: 1px solid #c0c0c0; -webkit-box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.1); box-shadow: 20px 20px 0 rgba(0, 0, 0, 0.1); }
 
 img { max-width: 100%; }
 
 .site-header { text-align: center; }
 
-.site-header .logo { max-width: 400px; margin: 40px auto 0; }
+.site-header .logo { max-width: 400px; margin: 40px 0 auto 20px; }
+
+@media (min-width: 1024px) { .site-header .logo { margin: 75px auto; } }
 
 .stripe-members { margin-bottom: 45px; overflow: hidden; }
 
@@ -46,6 +97,22 @@ img { max-width: 100%; }
 
 .home-title { font-size: 42px; margin-bottom: 1em; }
 
+.post-content { font-size: 20px; line-height: 1.7; margin-bottom: 15px; }
+
+.post-content p { margin-bottom: 30px; }
+
+.post { padding-bottom: 30px; margin-bottom: 45px; border-bottom: 5px solid #e1e1e1; }
+
+.post-title { font-size: 42px; margin-bottom: 15px; display: inline-block; padding: 0 5px 15px; border-bottom: 2px solid #e1e1e1; text-align: center; }
+
+.post-thumb { margin-bottom: 45px; }
+
+.post-meta { margin-bottom: 15px; }
+
+.post-meta > strong { padding-right: 10px; }
+
+.aside-title { margin-bottom: 15px; display: inline-block; padding: 0 5px 15px; border-bottom: 5px solid #e1e1e1; }
+
 .gallery { overflow: hidden; }
 
 .gallery-columns-4 .gallery-item { width: 50%; }
@@ -57,6 +124,8 @@ img { max-width: 100%; }
 .gallery .gallery-item .gallery-icon a { display: block; width: 100%; padding-bottom: 56%; position: relative; overflow: hidden; z-index: 2; }
 
 .gallery .gallery-item .gallery-icon img { position: absolute; left: 0; width: 100%; max-width: 100%; height: auto; min-height: 100%; }
+
+.site-footer { margin-top: 45px; padding: 30px 0 45px; border-top: 5px solid #e1e1e1; }
 
 .band-title { text-align: center; margin: 0 0 30px; }
 

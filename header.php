@@ -16,6 +16,14 @@
         <link href="https://fonts.googleapis.com/css?family=Bree+Serif|Lora" rel="stylesheet">
         <?php wp_head(); ?>
         <body <?php body_class(); ?>>
+            
+            <!-- open/close -->
+            <div class="overlay overlay-hugeinc close">
+                <button type="button" class="overlay-close">Close</button>
+                <nav class="main-menu">
+                    <?php wp_nav_menu('primarynav'); ?>
+                </nav>
+            </div>
             <div class="container">
                 <header class="site-header">
                     <figure class="logo">
@@ -23,7 +31,9 @@
                             <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/logo.png" alt="Diffusion band" />
                         </a>
                     </figure>
-                    <nav class="main-menu">
-                        <?php wp_nav_menu('primarynav'); ?>
-                    </nav>
+                    <button id="trigger-overlay" type="button">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
                 </header>
