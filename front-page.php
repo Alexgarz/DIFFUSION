@@ -5,7 +5,7 @@
         <div class="col-md-10 col-lg-8 col-md-offset-1 col-lg-offset-2">
             <div class="col-md-4 col-lg-4 stripe-member-wrap">
                 <figure class="stripe-member">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/crop.jpg" alt="Diffusion band" />
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/final-crop1.jpg" alt="Diffusion band" />
                 </figure>
             </div>
             <div class="col-md-4 col-lg-4 stripe-member-wrap">
