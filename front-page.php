@@ -10,7 +10,7 @@
             </div>
             <div class="col-md-4 col-lg-4 stripe-member-wrap">
                 <figure class="stripe-member">
-                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/finalcrop2.jpg" alt="Diffusion band" />
+                    <img src="<?php echo get_stylesheet_directory_uri() ?>/assets/img/crop2.jpg" alt="Diffusion band" />
                 </figure>
             </div>
             <div class="col-md-4 col-lg-4 stripe-member-wrap">
